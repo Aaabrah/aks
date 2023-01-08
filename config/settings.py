@@ -5,8 +5,10 @@ from decouple import config
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
+# SECRET_KEY = 'django-insecure-lg^v8%w=z#*97la+jk#22abf8jnze-d3ola=a(8xxvjqmc-q4n'
 
 DEBUG = config('DEBUG')
+# DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -20,6 +22,8 @@ INSTALLED_APPS = [
     'main',
     'users',
     'products',
+
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +106,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.UserModel'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 try:
     from .local_settings import DATABASES
